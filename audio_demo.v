@@ -93,11 +93,13 @@ wire				write_audio_out;
 
 wire [31:0] q_ka;
 wire [31:0] q_don;
-wire [7:0]  q_bgm;
+
+//not enough memory
+/*wire [7:0]  q_bgm;
 
 reg  [17:0] addr_bgm;
 reg  [2:0]  bgm_div; // Divides 48 kHz by 6 -> 8 kHz
-reg         bgm_done;
+reg         bgm_done;*/
 
 //wire     [31:0] q_data;
 
@@ -172,7 +174,8 @@ always @(posedge CLOCK_50) begin
             addr_ka <= addr_ka + 1'b1;
     end
 end
-
+//not enough memory
+/*
 always @(posedge CLOCK_50) begin
     if (reset || !bgm_en) begin
         addr_bgm <= 18'd0;
@@ -190,6 +193,7 @@ always @(posedge CLOCK_50) begin
         end
     end
 end
+*/
 
 assign reset = ~KEY[0];
 
@@ -281,12 +285,20 @@ wire signed [15:0] ka_R  = playback_ka  ? q_ka[15:0]   : 16'sd0;
 
 // put both sounds together if theyre hit at the same time 
 // binary addition (2 maxed out 16 bits would leave 17 bits)
-wire signed [15:0] bgm_sample = (bgm_en && !bgm_done) ? {q_bgm, 8'd0} : 16'sd0;
+
+//not enough memory...
+/*wire signed [15:0] bgm_sample = (bgm_en && !bgm_done) ? {q_bgm, 8'd0} : 16'sd0;
 wire signed [17:0] mix_L = don_L + ka_L + bgm_sample;
 wire signed [17:0] mix_R = don_R + ka_R + bgm_sample;
 
 assign left_channel_audio_out  = {mix_L[17:2], 16'b0};
-assign right_channel_audio_out = {mix_R[17:2], 16'b0};
+assign right_channel_audio_out = {mix_R[17:2], 16'b0};*/
+
+wire signed [16:0] mix_L = don_L + ka_L;
+wire signed [16:0] mix_R = don_R + ka_R;
+
+assign left_channel_audio_out  = {mix_L[16:1], 16'b0};
+assign right_channel_audio_out = {mix_R[16:1], 16'b0};
 
 
 // always @(posedge CLOCK_50) begin
@@ -304,8 +316,9 @@ assign write_audio_out = audio_out_allowed;
  *****************************************************************************/
 
 
-
-localparam [17:0] BGM_MAX = 18'd158165; // Replace with your printed MAX_ADDR
+//not enough memory
+/*
+localparam [17:0] BGM_MAX = 18'd158165; 
 
 BGM bgm_rom (
     .address ( addr_bgm ),
@@ -313,9 +326,9 @@ BGM bgm_rom (
     .q       ( q_bgm )
 );
 
-wire bgm_en = SW[0]
+wire bgm_en = SW[0];
+*/
 
-//maybe remake this with ROM as well
 Don	don_rom (
 .address ( addr_don[15:0] ),
 .clock ( CLOCK_50 ),

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for audio_demo
-Tue Nov 17 11:47:42 2026
+Tue Nov 17 12:29:00 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -78,13 +78,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 17 11:47:41 2026           ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 17 12:29:00 2026           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; audio_demo                                      ;
 ; Top-level Entity Name           ; audio_demo                                      ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 227                                             ;
+; Total registers                 ; 226                                             ;
 ; Total pins                      ; 17                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 3,153,920                                       ;
@@ -266,16 +266,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 311            ;
+; Estimate of Logic utilization (ALMs needed) ; 312            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 483            ;
-;     -- 7 input functions                    ; 3              ;
-;     -- 6 input functions                    ; 132            ;
-;     -- 5 input functions                    ; 170            ;
-;     -- 4 input functions                    ; 18             ;
-;     -- <=3 input functions                  ; 160            ;
+; Combinational ALUT usage for logic          ; 482            ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 136            ;
+;     -- 5 input functions                    ; 168            ;
+;     -- 4 input functions                    ; 15             ;
+;     -- <=3 input functions                  ; 161            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 227            ;
+; Dedicated logic registers                   ; 226            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 17             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -287,9 +287,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 618            ;
-; Total fan-out                               ; 9755           ;
-; Average fan-out                             ; 8.15           ;
+; Maximum fan-out                             ; 617            ;
+; Total fan-out                               ; 9747           ;
+; Average fan-out                             ; 8.16           ;
 +---------------------------------------------+----------------+
 
 
@@ -298,7 +298,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                         ; Entity Name                    ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
-; |audio_demo                                                 ; 483 (216)           ; 227 (37)                  ; 3153920           ; 0          ; 17   ; 0            ; |audio_demo                                                                                                                                                                                                                                 ; audio_demo                     ; work         ;
+; |audio_demo                                                 ; 482 (215)           ; 226 (36)                  ; 3153920           ; 0          ; 17   ; 0            ; |audio_demo                                                                                                                                                                                                                                 ; audio_demo                     ; work         ;
 ;    |Audio_Controller:Audio_Controller|                      ; 159 (2)             ; 110 (2)                   ; 8192              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller                                                                                                                                                                                               ; Audio_Controller               ; work         ;
 ;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer| ; 156 (62)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                           ; Altera_UP_Audio_Out_Serializer ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|  ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO                                                                                           ; Altera_UP_SYNC_FIFO            ; work         ;
@@ -449,8 +449,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 227   ;
-; Number of registers using Synchronous Clear  ; 129   ;
+; Total registers                              ; 226   ;
+; Number of registers using Synchronous Clear  ; 128   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 39    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -477,18 +477,18 @@ Encoding Type:  One-Hot
 +--------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |audio_demo|addr_ka[3]                                                                                                   ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |audio_demo|addr_don[9]                                                                                                  ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[25] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |audio_demo|avconf:avc|I2C_Controller:u0|SD_COUNTER[0]                                                                   ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |audio_demo|ka_R[11]                                                                                                     ;
-; 9:1                ; 32 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |audio_demo|don_R[3]                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |audio_demo|addr_ka[8]                                                                                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |audio_demo|addr_don[4]                                                                                                 ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[6] ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |audio_demo|avconf:avc|I2C_Controller:u0|SD_COUNTER[5]                                                                  ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |audio_demo|ka_R[11]                                                                                                    ;
+; 9:1                ; 32 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |audio_demo|don_R[3]                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -1412,30 +1412,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 227                         ;
+; arriav_ff             ; 226                         ;
 ;     CLR               ; 19                          ;
 ;     CLR SCLR          ; 16                          ;
 ;     ENA               ; 38                          ;
 ;     ENA CLR           ; 4                           ;
 ;     ENA SCLR          ; 103                         ;
-;     SCLR              ; 10                          ;
+;     SCLR              ; 9                           ;
 ;     plain             ; 37                          ;
 ; arriav_io_obuf        ; 4                           ;
-; arriav_lcell_comb     ; 483                         ;
+; arriav_lcell_comb     ; 482                         ;
 ;     arith             ; 136                         ;
 ;         1 data inputs ; 88                          ;
 ;         2 data inputs ; 14                          ;
 ;         5 data inputs ; 34                          ;
-;     extend            ; 3                           ;
-;         7 data inputs ; 3                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
 ;     normal            ; 344                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 18                          ;
-;         5 data inputs ; 136                         ;
-;         6 data inputs ; 132                         ;
+;         2 data inputs ; 33                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 15                          ;
+;         5 data inputs ; 134                         ;
+;         6 data inputs ; 136                         ;
 ; boundary_port         ; 17                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 448                         ;
@@ -1460,7 +1460,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Nov 17 11:47:29 2026
+    Info: Processing started: Tue Nov 17 12:28:48 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off audio_demo -c audio_demo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1488,8 +1488,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file katsu.v
     Info (12023): Found entity 1: Katsu File: C:/Users/leungva7/Audio/Katsu.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file don.v
     Info (12023): Found entity 1: Don File: C:/Users/leungva7/Audio/Don.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file bgm.v
+    Info (12023): Found entity 1: BGM File: C:/Users/leungva7/Audio/BGM.v Line: 39
 Info (12127): Elaborating entity "audio_demo" for the top level hierarchy
-Info (12128): Elaborating entity "Don" for hierarchy "Don:don_rom" File: C:/Users/leungva7/Audio/audio_demo.v Line: 288
+Info (12128): Elaborating entity "Don" for hierarchy "Don:don_rom" File: C:/Users/leungva7/Audio/audio_demo.v Line: 336
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Don:don_rom|altsyncram:altsyncram_component" File: C:/Users/leungva7/Audio/Don.v Line: 81
 Info (12130): Elaborated megafunction instantiation "Don:don_rom|altsyncram:altsyncram_component" File: C:/Users/leungva7/Audio/Don.v Line: 81
 Info (12133): Instantiated megafunction "Don:don_rom|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/leungva7/Audio/Don.v Line: 81
@@ -1516,7 +1518,7 @@ Info (12128): Elaborating entity "decode_61a" for hierarchy "Don:don_rom|altsync
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ahb.tdf
     Info (12023): Found entity 1: mux_ahb File: C:/Users/leungva7/Audio/db/mux_ahb.tdf Line: 22
 Info (12128): Elaborating entity "mux_ahb" for hierarchy "Don:don_rom|altsyncram:altsyncram_component|altsyncram_e1g1:auto_generated|mux_ahb:mux2" File: C:/Users/leungva7/Audio/db/altsyncram_e1g1.tdf Line: 40
-Info (12128): Elaborating entity "Katsu" for hierarchy "Katsu:katsu_rom" File: C:/Users/leungva7/Audio/audio_demo.v Line: 294
+Info (12128): Elaborating entity "Katsu" for hierarchy "Katsu:katsu_rom" File: C:/Users/leungva7/Audio/audio_demo.v Line: 342
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Katsu:katsu_rom|altsyncram:altsyncram_component" File: C:/Users/leungva7/Audio/Katsu.v Line: 81
 Info (12130): Elaborated megafunction instantiation "Katsu:katsu_rom|altsyncram:altsyncram_component" File: C:/Users/leungva7/Audio/Katsu.v Line: 81
 Info (12133): Instantiated megafunction "Katsu:katsu_rom|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/leungva7/Audio/Katsu.v Line: 81
@@ -1543,7 +1545,7 @@ Info (12128): Elaborating entity "decode_11a" for hierarchy "Katsu:katsu_rom|alt
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_5hb.tdf
     Info (12023): Found entity 1: mux_5hb File: C:/Users/leungva7/Audio/db/mux_5hb.tdf Line: 22
 Info (12128): Elaborating entity "mux_5hb" for hierarchy "Katsu:katsu_rom|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|mux_5hb:mux2" File: C:/Users/leungva7/Audio/db/altsyncram_l8g1.tdf Line: 40
-Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: C:/Users/leungva7/Audio/audio_demo.v Line: 328
+Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: C:/Users/leungva7/Audio/audio_demo.v Line: 376
 Info (12128): Elaborating entity "Altera_UP_Clock_Edge" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges" File: C:/Users/leungva7/Audio/Audio_Controller/Audio_Controller.v Line: 182
 Info (12128): Elaborating entity "Altera_UP_Audio_In_Deserializer" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer" File: C:/Users/leungva7/Audio/Audio_Controller/Audio_Controller.v Line: 237
 Info (12128): Elaborating entity "Altera_UP_Audio_Bit_Counter" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter" File: C:/Users/leungva7/Audio/Audio_Controller/Altera_UP_Audio_In_Deserializer.v Line: 159
@@ -1645,7 +1647,7 @@ Info (12133): Instantiated megafunction "Audio_Controller:Audio_Controller|Audio
 Info (12021): Found 1 design units, including 1 entities, in source file db/audio_clock_altpll.v
     Info (12023): Found entity 1: Audio_Clock_altpll File: C:/Users/leungva7/Audio/db/audio_clock_altpll.v Line: 29
 Info (12128): Elaborating entity "Audio_Clock_altpll" for hierarchy "Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component|Audio_Clock_altpll:auto_generated" File: c:/intelfpga/quartus_prime_standard_18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: C:/Users/leungva7/Audio/audio_demo.v Line: 335
+Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: C:/Users/leungva7/Audio/audio_demo.v Line: 383
 Warning (10230): Verilog HDL assignment warning at avconf.v(68): truncated value with size 32 to match size of target (16) File: C:/Users/leungva7/Audio/avconf/avconf.v Line: 68
 Warning (10230): Verilog HDL assignment warning at avconf.v(119): truncated value with size 32 to match size of target (6) File: C:/Users/leungva7/Audio/avconf/avconf.v Line: 119
 Warning (10230): Verilog HDL assignment warning at avconf.v(137): truncated value with size 32 to match size of target (16) File: C:/Users/leungva7/Audio/avconf/avconf.v Line: 137
@@ -2308,17 +2310,17 @@ Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/leungva7/Audio/audio_demo.v Line: 62
     Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/leungva7/Audio/audio_demo.v Line: 62
     Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/leungva7/Audio/audio_demo.v Line: 62
-Info (21057): Implemented 977 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 976 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 10 input pins
     Info (21059): Implemented 3 output pins
     Info (21060): Implemented 4 bidirectional pins
-    Info (21061): Implemented 511 logic cells
+    Info (21061): Implemented 510 logic cells
     Info (21064): Implemented 448 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 655 warnings
-    Info: Peak virtual memory: 4904 megabytes
-    Info: Processing ended: Tue Nov 17 11:47:42 2026
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Tue Nov 17 12:29:00 2026
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:21
 
 
