@@ -43,7 +43,7 @@ module tb_audio;
         end
     end
 
-    // 3. Test sequence: Reset -> Hit Don -> Hit Katsu while Don plays
+    // 3. Test sequence: Reset -> Solo Don -> Solo Katsu -> Both Together
     initial begin
         // Default state: all keys unpressed (active-low = 1)
         KEY = 4'b1111;
@@ -55,19 +55,30 @@ module tb_audio;
         KEY[0] = 1'b1;
         repeat (10) @(posedge CLOCK_50);
 
-        // Press KEY[1] (Don)
+        // 1. Solo Don: Press KEY[1]
+        KEY[1] = 1'b0;
+        repeat (5) @(posedge CLOCK_50);
+        KEY[1] = 1'b1;
+        repeat (150) @(posedge CLOCK_50);
+
+        // 2. Solo Katsu: Reset briefly so Don stops, then press KEY[2]
+        KEY[0] = 1'b0;
+        repeat (5) @(posedge CLOCK_50);
+        KEY[0] = 1'b1;
+        repeat (10) @(posedge CLOCK_50);
+
+        KEY[2] = 1'b0;
+        repeat (5) @(posedge CLOCK_50);
+        KEY[2] = 1'b1;
+        repeat (150) @(posedge CLOCK_50);
+
+        // 3. Both Together: Press KEY[1] (Don) while Katsu is still playing
         KEY[1] = 1'b0;
         repeat (5) @(posedge CLOCK_50);
         KEY[1] = 1'b1;
 
-        // Wait 50 samples while Don is playing, then press KEY[2] (Katsu)
-        repeat (500) @(posedge CLOCK_50);
-        KEY[2] = 1'b0;
-        repeat (5) @(posedge CLOCK_50);
-        KEY[2] = 1'b1;
-
-        // Let both sounds play and mix for 500 more samples, then stop
-        repeat (5000) @(posedge CLOCK_50);
+        // Let both sounds play and mix for 20 more samples, then stop
+        repeat (200) @(posedge CLOCK_50);
         $stop;
     end
 
