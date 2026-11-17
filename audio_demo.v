@@ -45,6 +45,7 @@ module audio_demo (
 
 	FPGA_I2C_SCLK,
 	SW
+	//LEDR
 );
 
 /*****************************************************************************
@@ -74,6 +75,7 @@ output				AUD_XCK;
 output				AUD_DACDAT;
 
 output				FPGA_I2C_SCLK;
+//output LEDR;
 
 /*****************************************************************************
  *                 Internal Wires and Registers Declarations                 *
@@ -332,5 +334,10 @@ avconf #(.USE_MIC_INPUT(1)) avc (
 	.reset						(~KEY[0])
 );
 
+//debug
+//assign LEDR[0] = playback_don;
+//assign LEDR[1] = playback_ka;
+//assign LEDR[2] = audio_out_allowed;
+//assign LEDR[9:3] = addr_don[14:8];
 endmodule
 

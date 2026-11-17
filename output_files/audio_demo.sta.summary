@@ -3,24 +3,24 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -4.400
-TNS   : -4.400
+Slack : -4.505
+TNS   : -4.505
 
 Type  : Slow 1100mV 85C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -2.105
-TNS   : -128.449
+Slack : -2.236
+TNS   : -122.701
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.218
+Slack : 0.228
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.465
+Slack : 0.438
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
 Slack : -0.394
-TNS   : -37.002
+TNS   : -36.884
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Audio_Controller|Audio_Clock|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
@@ -31,51 +31,51 @@ Slack : 8.853
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -4.268
-TNS   : -4.268
+Slack : -4.359
+TNS   : -4.359
 
 Type  : Slow 1100mV 0C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -2.129
-TNS   : -125.428
+Slack : -2.271
+TNS   : -118.771
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.207
+Slack : 0.216
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.471
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
 Slack : -0.394
-TNS   : -36.595
+TNS   : -36.093
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Audio_Controller|Audio_Clock|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
 Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.813
+Slack : 8.806
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -3.619
-TNS   : -3.619
+Slack : -3.599
+TNS   : -3.599
 
 Type  : Fast 1100mV 85C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -0.914
-TNS   : -50.510
+Slack : -1.099
+TNS   : -53.411
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.129
+Slack : 0.133
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.174
+Slack : 0.162
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.094
+Slack : 0.040
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Audio_Controller|Audio_Clock|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -87,23 +87,23 @@ Slack : 8.788
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -3.071
-TNS   : -3.071
+Slack : -3.055
+TNS   : -3.055
 
 Type  : Fast 1100mV 0C Model Setup 'avconf:avc|mI2C_CTRL_CLK'
-Slack : -0.786
-TNS   : -43.687
+Slack : -0.933
+TNS   : -45.504
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.120
+Slack : 0.122
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.161
+Slack : 0.148
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'avconf:avc|mI2C_CTRL_CLK'
-Slack : 0.109
+Slack : 0.071
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Audio_Controller|Audio_Clock|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -111,7 +111,7 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.782
+Slack : 8.781
 TNS   : 0.000
 
 ------------------------------------------------------------
