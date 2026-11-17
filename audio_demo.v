@@ -89,7 +89,7 @@ wire				read_audio_in;
 wire				audio_out_allowed;
 wire		[31:0]	left_channel_audio_out;
 wire		[31:0]	right_channel_audio_out;
-reg				write_audio_out;
+wire				write_audio_out;
 
 wire [31:0] q_ka;
 wire [31:0] q_don;
@@ -265,12 +265,14 @@ assign left_channel_audio_out  = {mix_L[16:1], 16'b0};
 assign right_channel_audio_out = {mix_R[16:1], 16'b0};
 
 
-always @(posedge CLOCK_50) begin
-    if (reset)
-        write_audio_out <= 1'b0;
-    else
-        write_audio_out <= audio_out_allowed && (playback_don || playback_ka);
-end
+// always @(posedge CLOCK_50) begin
+//     if (reset)
+//         write_audio_out <= 1'b0;
+//     else
+//         write_audio_out <= audio_out_allowed && (playback_don || playback_ka);
+// end
+
+assign write_audio_out = audio_out_allowed;
 
 
 /*****************************************************************************
