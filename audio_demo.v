@@ -89,13 +89,16 @@ wire		[31:0]	left_channel_audio_out;
 wire		[31:0]	right_channel_audio_out;
 reg				write_audio_out;
 
-wire     [31:0] q_data;
+wire [31:0] q_ka;
+wire [31:0] q_don;
+
+//wire     [31:0] q_data;
 
 // Internal Registers
 
 wire reset;
 reg playback;
-reg [15:0] addr_cnt;
+//reg [15:0] addr_cnt;
 reg is_lower;
 reg delay; // down sampling to 24k
 
@@ -127,8 +130,8 @@ always @(posedge CLOCK_50) begin
     end
 end
 
-localparam [15:0] DON_MAX   = 16'd14399;
-localparam [15:0] KATSU_MAX = 16'd14399;
+localparam [15:0] DON_MAX   = 16'd39835;
+localparam [15:0] KATSU_MAX = 16'd19536;
 
 reg playback_don, playback_ka;
 reg [15:0] addr_don, addr_ka;
@@ -273,21 +276,17 @@ end
  *****************************************************************************/
 
 
-wire [31:0] q_ka;
-//rename to q_data to q_don for clarity but test this in person
-//wire [31:0] q_don;
+
 
 //maybe remake this with ROM as well
-intel_sound	intel_sound_inst (
-.address ( addr_cnt ),
+Don	don_rom (
+.address ( addr_don[15:0] ),
 .clock ( CLOCK_50 ),
-.data (  ),
-.wren ( 1'b0 ),
-.q ( q_data )
+.q ( q_don )
 );
 
-katsu katsu_rom (
-    .address ( addr_ka ),
+Katsu katsu_rom (
+    .address ( addr_ka[14:0] ),
     .clock   ( CLOCK_50 ),
     .q       ( q_ka )
 );

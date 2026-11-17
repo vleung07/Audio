@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue Oct 14 23:14:20 2025
-Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Fitter Status : Successful - Tue Nov 17 00:30:01 2026
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : audio_demo
 Top-level Entity Name : audio_demo
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 260 / 32,070 ( < 1 % )
-Total registers : 231
+Logic utilization (in ALMs) : 240 / 32,070 ( < 1 % )
+Total registers : 239
 Total pins : 17 / 457 ( 4 % )
 Total virtual pins : 0
-Total block memory bits : 2,105,344 / 4,065,280 ( 52 % )
-Total RAM Blocks : 258 / 397 ( 65 % )
+Total block memory bits : 1,056,832 / 4,065,280 ( 26 % )
+Total RAM Blocks : 131 / 397 ( 33 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

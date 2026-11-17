@@ -1,3 +1,16 @@
+/*
+To run on modelsim
+vlog audio_demo.v Don.v Katsu.v tb_audio.v
+vsim -L altera_mf_ver work.tb_audio
+add wave -radix unsigned /tb_audio/dut/addr_don
+add wave -radix unsigned /tb_audio/dut/addr_ka
+add wave -radix unsigned /tb_audio/dut/don_rom/address
+add wave /tb_audio/dut/don_rom/clock
+add wave -radix hex /tb_audio/dut/q_don
+add wave -radix hex /tb_audio/dut/q_ka
+add wave -format Analog-Automatic -radix decimal /tb_audio/dut/mix_L
+run -all
+*/
 `timescale 1ns / 1ps
 
 module tb_audio;
@@ -58,4 +71,24 @@ module tb_audio;
         $stop;
     end
 
+endmodule
+
+module Audio_Controller (
+    input CLOCK_50, reset, clear_audio_in_memory, read_audio_in,
+    input clear_audio_out_memory, write_audio_out,
+    input [31:0] left_channel_audio_out, right_channel_audio_out,
+    input AUD_ADCDAT,
+    inout AUD_BCLK, AUD_ADCLRCK, AUD_DACLRCK,
+    output audio_in_available, audio_out_allowed, AUD_XCK, AUD_DACDAT,
+    output [31:0] left_channel_audio_in, right_channel_audio_in
+);
+endmodule
+
+module avconf #(
+    parameter USE_MIC_INPUT = 0
+) (
+    input CLOCK_50, reset,
+    output FPGA_I2C_SCLK,
+    inout FPGA_I2C_SDAT
+);
 endmodule

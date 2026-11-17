@@ -1,0 +1,280 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ECE241/Audio/Audio
+vAltera_UP_Audio_Bit_Counter
+Z1 !s110 1794893596
+!i10b 1
+!s100 0o^lS^IaZf6lc8;mFc89O3
+IiQA@840LO?4PXPh:I`lBg3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1794891145
+8Audio_Controller/Altera_UP_Audio_Bit_Counter.v
+FAudio_Controller/Altera_UP_Audio_Bit_Counter.v
+L0 11
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1794893596.000000
+Z6 !s107 avconf/avconf.v|avconf/I2C_Controller.v|Audio_Controller/Audio_Controller.v|Audio_Controller/Audio_Clock.v|Audio_Controller/Altera_UP_SYNC_FIFO.v|Audio_Controller/Altera_UP_Clock_Edge.v|Audio_Controller/Altera_UP_Audio_Out_Serializer.v|Audio_Controller/Altera_UP_Audio_In_Deserializer.v|Audio_Controller/Altera_UP_Audio_Bit_Counter.v|
+Z7 !s90 -reportprogress|300|Audio_Controller/Altera_UP_Audio_Bit_Counter.v|Audio_Controller/Altera_UP_Audio_In_Deserializer.v|Audio_Controller/Altera_UP_Audio_Out_Serializer.v|Audio_Controller/Altera_UP_Clock_Edge.v|Audio_Controller/Altera_UP_SYNC_FIFO.v|Audio_Controller/Audio_Clock.v|Audio_Controller/Audio_Controller.v|avconf/I2C_Controller.v|avconf/avconf.v|
+!i113 1
+Z8 tCvgOpt 0
+n@altera_@u@p_@audio_@bit_@counter
+vAltera_UP_Audio_In_Deserializer
+R1
+!i10b 1
+!s100 QIN=mllYL6NF954KEZgo00
+ICD9oJgL^Mi[2Jj?@;WDIk1
+R2
+R0
+R3
+8Audio_Controller/Altera_UP_Audio_In_Deserializer.v
+FAudio_Controller/Altera_UP_Audio_In_Deserializer.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@altera_@u@p_@audio_@in_@deserializer
+vAltera_UP_Audio_Out_Serializer
+R1
+!i10b 1
+!s100 ^b>IEB6190omD0d_0TU]R0
+IG2?W;7`2YjUUb7BAm<QP:3
+R2
+R0
+R3
+8Audio_Controller/Altera_UP_Audio_Out_Serializer.v
+FAudio_Controller/Altera_UP_Audio_Out_Serializer.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@altera_@u@p_@audio_@out_@serializer
+vAltera_UP_Clock_Edge
+R1
+!i10b 1
+!s100 m;MP:OR1QP]f>i1a;Th_h0
+I91DUDY_hJ;eHKQR99DM0D2
+R2
+R0
+R3
+8Audio_Controller/Altera_UP_Clock_Edge.v
+FAudio_Controller/Altera_UP_Clock_Edge.v
+L0 10
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@altera_@u@p_@clock_@edge
+vAltera_UP_SYNC_FIFO
+R1
+!i10b 1
+!s100 ?S5>gdm0e84HSI=i?VPQ43
+IJcm?J]BYGEUXXJ0Ihj<QP2
+R2
+R0
+R3
+8Audio_Controller/Altera_UP_SYNC_FIFO.v
+FAudio_Controller/Altera_UP_SYNC_FIFO.v
+L0 9
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@altera_@u@p_@s@y@n@c_@f@i@f@o
+vAudio_Clock
+R1
+!i10b 1
+!s100 zMXi]?PGQWc4TB2kK;I9[2
+I;KSAKde<=44X]7QPjF9aS1
+R2
+R0
+R3
+8Audio_Controller/Audio_Clock.v
+FAudio_Controller/Audio_Clock.v
+Z9 L0 39
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@audio_@clock
+vAudio_Controller
+Z10 !s110 1794894407
+!i10b 1
+!s100 ];SFoo>^6zY^QafU?:h561
+I@GhlAG5PmQa[>64a_kKVB0
+R2
+R0
+Z11 w1794893846
+Z12 8tb_audio.v
+Z13 Ftb_audio.v
+L0 63
+R4
+r1
+!s85 0
+31
+Z14 !s108 1794894407.000000
+Z15 !s107 tb_audio.v|Katsu.v|Don.v|audio_demo.v|
+Z16 !s90 -reportprogress|300|audio_demo.v|Don.v|Katsu.v|tb_audio.v|
+!i113 1
+R8
+n@audio_@controller
+vaudio_demo
+R10
+!i10b 1
+!s100 l02]iI=U<m`jH:]<od_Pm1
+ID3g7ECXJV496KL8^ZYe[K2
+R2
+R0
+w1794894253
+8audio_demo.v
+Faudio_demo.v
+L0 28
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+vavconf
+R10
+!i10b 1
+!s100 8b4N?QgmZW]9V=dNSbgP50
+Im=_OJk[DV3[5[ciH_B3Lc0
+R2
+R0
+R11
+R12
+R13
+L0 74
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+vDon
+R10
+!i10b 1
+!s100 Gj75BhFO<iP6]j^Y<>V2[3
+IedEP094VA6<oKmi6KKW<93
+R2
+R0
+w1794891990
+8Don.v
+FDon.v
+R9
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+n@don
+vI2C_Controller
+R1
+!i10b 1
+!s100 9VOR@]0>l=X@k@oaWaBQ_0
+Ibfl:RS4<a2nPFZjYI_mCR1
+R2
+R0
+R3
+8avconf/I2C_Controller.v
+Favconf/I2C_Controller.v
+L0 43
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+n@i2@c_@controller
+vKatsu
+R10
+!i10b 1
+!s100 z];=FbESF[D12VHi^L38W0
+IaPUcJ_9^oGB5HAk>Sg3N;0
+R2
+R0
+w1794891678
+8Katsu.v
+FKatsu.v
+R9
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
+n@katsu
+vtb_audio
+R10
+!i10b 1
+!s100 i=z1i7AD6<h9gR<7b8><71
+I:Pc<Ufz9kSYj;kSmziMC@1
+R2
+R0
+R11
+R12
+R13
+L0 3
+R4
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R8
