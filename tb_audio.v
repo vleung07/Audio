@@ -32,7 +32,6 @@ module tb_audio;
     always #10 CLOCK_50 = ~CLOCK_50;
 
     // 2. Simulate the audio chip asking for a new sample every 10 clock cycles
-    // (Fast-forwarded 100x so simulation finishes in milliseconds instead of minutes)
     initial begin
         force dut.audio_out_allowed = 1'b0;
         forever begin
