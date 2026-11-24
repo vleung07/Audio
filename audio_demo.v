@@ -196,6 +196,15 @@ wire signed [15:0] don_R = playback_don ? q_don[15:0]  : 16'sd0;
 wire signed [15:0] ka_L  = playback_ka  ? q_ka[31:16]  : 16'sd0;
 wire signed [15:0] ka_R  = playback_ka  ? q_ka[15:0]   : 16'sd0;
 
+wire signed [15:0] bgm_out;
+
+bgm_player u_bgm (
+    .CLOCK_50      (CLOCK_50),
+    .reset         (~KEY[0]), // Active-high reset (matches active-low KEY[0])
+    .enable        (SW[0]),   // Flip SW[0] up to play BGM
+    .bgm_audio_out (bgm_out)
+);
+
 // put both sounds together if theyre hit at the same time 
 // binary addition (2 maxed out 16 bits would leave 17 bits)
 
@@ -207,11 +216,11 @@ wire signed [17:0] mix_R = don_R + ka_R + bgm_sample;
 assign left_channel_audio_out  = {mix_L[17:2], 16'b0};
 assign right_channel_audio_out = {mix_R[17:2], 16'b0};*/
 
-wire signed [16:0] mix_L = don_L + ka_L;
-wire signed [16:0] mix_R = don_R + ka_R;
+wire signed [17:0] mix_L = don_L + ka_L + bgm_out;
+wire signed [17:0] mix_R = don_R + ka_R + bgm_out;
 
-assign left_channel_audio_out  = {mix_L[16:1], 16'b0};
-assign right_channel_audio_out = {mix_R[16:1], 16'b0};
+assign left_channel_audio_out  = {mix_L[17:2], 16'b0};
+assign right_channel_audio_out = {mix_R[17:2], 16'b0};
 
 assign write_audio_out = audio_out_allowed;
 
