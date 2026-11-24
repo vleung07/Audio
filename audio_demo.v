@@ -3,6 +3,8 @@ module audio_demo (
 	// Inputs
 	CLOCK_50,
 	KEY,
+    PS2_CLK,
+	PS2_DAT,
 
 	AUD_ADCDAT,
 
@@ -34,6 +36,7 @@ module audio_demo (
 input				CLOCK_50;
 input		[3:0]	KEY;
 input		[3:0]	SW;
+input PS2_CLK, PS2_DAT;
 
 input				AUD_ADCDAT;
 
@@ -112,6 +115,21 @@ always @(posedge CLOCK_50) begin
     end
 end
 
+wire [7:0] keyVal;
+wire key_pressed;
+
+ps2_keyboard u_keyb(
+    .CLOCK_50    (CLOCK_50),
+    .reset       (KEY[0]), 
+    .PS2_CLK     (PS2_CLK),
+    .PS2_DAT     (PS2_DAT),
+    .scancode    (keyVal),
+    .key_pressed (key_pressed)
+);
+
+wire don_key_trigger = key_pressed && (keyVal == 8'h34 || keyVal == 8'h33);//g or h
+wire ka_key_trigger  = key_pressed && (keyVal == 8'h2B || keyVal == 8'h3B);//f or j
+
 localparam [15:0] DON_MAX   = 16'd39835;
 localparam [15:0] KATSU_MAX = 16'd19536;
 
@@ -122,7 +140,7 @@ always @(posedge CLOCK_50) begin
     if (reset) begin
         playback_don <= 1'b0;
         addr_don     <= 16'b0;
-    end else if (don_trigger) begin
+    end else if (don_trigger || don_key_trigger) begin
         playback_don <= 1'b1;
         addr_don     <= 16'b0;
     end else if (audio_out_allowed && playback_don) begin
@@ -137,7 +155,7 @@ always @(posedge CLOCK_50) begin
     if (reset) begin
         playback_ka <= 1'b0;
         addr_ka     <= 16'b0;
-    end else if (ka_trigger) begin
+    end else if (ka_trigger || ka_key_trigger) begin
         playback_ka <= 1'b1;
         addr_ka     <= 16'b0;
     end else if (audio_out_allowed && playback_ka) begin
