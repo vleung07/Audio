@@ -1,5 +1,5 @@
 Flow report for audio_demo
-Tue Nov 17 12:30:24 2026
+Tue Nov 24 19:19:23 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Tue Nov 17 12:30:15 2026           ;
+; Flow Status                     ; Successful - Tue Nov 24 19:18:52 2026           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; audio_demo                                      ;
 ; Top-level Entity Name           ; audio_demo                                      ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 318 / 32,070 ( < 1 % )                          ;
-; Total registers                 ; 237                                             ;
-; Total pins                      ; 17 / 457 ( 4 % )                                ;
+; Logic utilization (in ALMs)     ; 430 / 32,070 ( 1 % )                            ;
+; Total registers                 ; 330                                             ;
+; Total pins                      ; 19 / 457 ( 4 % )                                ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 3,153,920 / 4,065,280 ( 78 % )                  ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/17/2026 12:28:49 ;
+; Start date & time ; 11/24/2026 19:15:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; audio_demo          ;
 +-------------------+---------------------+
@@ -78,12 +78,12 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 93181000662619.179493652918728         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 93181000663277.179556570805524         ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; Katsu_bb.v                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; Don_bb.v                               ; --            ; --          ; --         ;
-; MISC_FILE                           ; BGM_bb.v                               ; --            ; --          ; --         ;
+; NUM_PARALLEL_PROCESSORS             ; 2                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -99,11 +99,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4908 MB             ; 00:00:21                           ;
-; Fitter               ; 00:01:04     ; 1.2                     ; 6996 MB             ; 00:03:16                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4885 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:08     ; 2.2                     ; 5257 MB             ; 00:00:14                           ;
-; Total                ; 00:01:32     ; --                      ; --                  ; 00:03:59                           ;
+; Analysis & Synthesis ; 00:02:06     ; 1.0                     ; 4878 MB             ; 00:00:34                           ;
+; Fitter               ; 00:01:02     ; 1.1                     ; 6457 MB             ; 00:01:23                           ;
+; Assembler            ; 00:00:16     ; 1.0                     ; 4897 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:28     ; 1.2                     ; 5218 MB             ; 00:00:15                           ;
+; Total                ; 00:03:52     ; --                      ; --                  ; 00:02:21                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,10 +112,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; BA3135WS32       ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; BA3135WS32       ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; BA3135WS32       ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; BA3135WS32       ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; BA3135WS06       ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; BA3135WS06       ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; BA3135WS06       ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; BA3135WS06       ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
