@@ -6,13 +6,13 @@ module bgm_player (
 );
 
     input                CLOCK_50, reset, enable;
-    output signed [15:0] bgm_audio_out; // Signed 16-bit PCM to add into your audio mixer!
+    output signed [15:0] bgm_audio_out; 
 
     // 1 tick = 1/6th of a quarter note at 120 BPM (50 MHz / 12 = 4,166,667 clocks)
     parameter [22:0] CLKS_PER_TICK = 23'd4166667;
-    parameter [6:0]  TOTAL_NOTES   = 7'd81; // Bars 1 to 10 = indices 0..81
+    parameter [6:0]  TOTAL_NOTES   = 7'd81; 
 
-    // Note pitch encoding (5-bit: F4 up to E6)
+    // all the notes
     parameter [4:0] REST = 5'd0,
                     F4   = 5'd1,  G4   = 5'd2,  A4   = 5'd3,  AS4  = 5'd4,
                     B4   = 5'd5,  C5   = 5'd6,  D5   = 5'd7,  E5   = 5'd8,
@@ -24,9 +24,9 @@ module bgm_player (
     reg [4:0]  tick_cnt;
 
     reg [4:0]  curr_pitch;
-    reg [4:0]  curr_dur; // Duration in ticks (1 beat = 6 ticks)
+    reg [4:0]  curr_dur; // Duration in ticks 
 
-    // Compact Song ROM for Bars 1-10: {pitch[4:0], duration_ticks[4:0]}
+    
     always @(*) begin
         case (note_idx)
             // Bar 1
@@ -126,7 +126,7 @@ module bgm_player (
         endcase
     end
 
-    // Pitch-to-half-period lookup (50 MHz clock)
+    //1/2freq for when to flip for the right tone
     reg [17:0] half_period;
     always @(*) begin
         case (curr_pitch)
@@ -149,7 +149,7 @@ module bgm_player (
         endcase
     end
 
-    // Advance through ticks & notes (plays Bars 1-10 once, then parks at REST)
+    // play the song
     always @(posedge CLOCK_50) begin
         if (reset || !enable) begin
             clk_cnt  <= 23'd0;
@@ -172,7 +172,7 @@ module bgm_player (
         end
     end
 
-    // Square-wave oscillator (brief gap at the end of notes so repeated notes articulate)
+    
     reg [17:0] tone_cnt;
     reg        tone_sq;
     wire       articulate_gap;
@@ -183,7 +183,7 @@ module bgm_player (
         if (reset || !enable || half_period == 18'd0 || articulate_gap) begin
             tone_cnt <= 18'd0;
             tone_sq  <= 1'b0;
-        end else if (tone_cnt >= half_period - 18'd1) begin
+        end else if (tone_cnt >= half_period - 18'd1) begin // flip pos to neg
             tone_cnt <= 18'd0;
             tone_sq  <= ~tone_sq;
         end else begin
@@ -191,8 +191,9 @@ module bgm_player (
         end
     end
 
-    // Quiet volume (+/- 2048 out of 32767) so Don & Katsu drum SFX stay loud and clear
+    // cap volume at 2048 to not max out the volume
     assign bgm_audio_out = (half_period == 18'd0 || articulate_gap) ? 16'sd0 :
-                           (tone_sq ? 16'sd2048 : -16'sd2048);
+                           (tone_sq ? 16'sd2048 : -16'sd2048);// + or - 
+                           //square wave
 
 endmodule

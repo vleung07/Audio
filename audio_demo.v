@@ -165,26 +165,6 @@ always @(posedge CLOCK_50) begin
             addr_ka <= addr_ka + 1'b1;
     end
 end
-//not enough memory
-/*
-always @(posedge CLOCK_50) begin
-    if (reset || !bgm_en) begin
-        addr_bgm <= 18'd0;
-        bgm_div  <= 3'd0;
-        bgm_done <= 1'b0;
-    end else if (audio_out_allowed && !bgm_done) begin
-        if (bgm_div == 3'd5) begin
-            bgm_div <= 3'd0;
-            if (addr_bgm == BGM_MAX)
-                bgm_done <= 1'b1; // Stop at the end of the track
-            else
-                addr_bgm <= addr_bgm + 18'd1;
-        end else begin
-            bgm_div <= bgm_div + 3'd1;
-        end
-    end
-end
-*/
 
 assign reset = ~KEY[0];
 
@@ -200,21 +180,11 @@ wire signed [15:0] bgm_out;
 
 bgm_player u_bgm (
     .CLOCK_50      (CLOCK_50),
-    .reset         (~KEY[0]), // Active-high reset (matches active-low KEY[0])
-    .enable        (SW[0]),   // Flip SW[0] up to play BGM
+    .reset         (~KEY[0]), 
+    .enable        (SW[0]),   
     .bgm_audio_out (bgm_out)
 );
 
-// put both sounds together if theyre hit at the same time 
-// binary addition (2 maxed out 16 bits would leave 17 bits)
-
-//not enough memory...
-/*wire signed [15:0] bgm_sample = (bgm_en && !bgm_done) ? {q_bgm, 8'd0} : 16'sd0;
-wire signed [17:0] mix_L = don_L + ka_L + bgm_sample;
-wire signed [17:0] mix_R = don_R + ka_R + bgm_sample;
-
-assign left_channel_audio_out  = {mix_L[17:2], 16'b0};
-assign right_channel_audio_out = {mix_R[17:2], 16'b0};*/
 
 wire signed [17:0] mix_L = don_L + ka_L + bgm_out;
 wire signed [17:0] mix_R = don_R + ka_R + bgm_out;
@@ -229,19 +199,6 @@ assign write_audio_out = audio_out_allowed;
  *                              Internal Modules                             *
  *****************************************************************************/
 
-
-//not enough memory
-/*
-localparam [17:0] BGM_MAX = 18'd158165; 
-
-BGM bgm_rom (
-    .address ( addr_bgm ),
-    .clock   ( CLOCK_50 ),
-    .q       ( q_bgm )
-);
-
-wire bgm_en = SW[0];
-*/
 
 Don	don_rom (
 .address ( addr_don[15:0] ),

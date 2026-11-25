@@ -28,7 +28,7 @@ module ps2_keyboard (CLOCK_50, reset, PS2_CLK, PS2_DAT, scancode, key_pressed);
     reg [10:0] shift_reg;
     reg [3:0] bit_cnt;
     reg ignore_next; 
-    // Flag to ignore the byte right after 8'hF0 (key release)
+    // ignore the code right after 8'hF0 (key release)
 	 
 	 reg [7:0] held_code;
 	 reg is_held;
@@ -40,10 +40,10 @@ module ps2_keyboard (CLOCK_50, reset, PS2_CLK, PS2_DAT, scancode, key_pressed);
             scancode <= 8'd0;
             key_pressed <= 1'b0;
             ignore_next <= 1'b0;
-				held_code <= 8'd0;
-				is_held <= 1'b0;
+			held_code <= 8'd0;
+			is_held <= 1'b0;
         end else begin
-            key_pressed <= 1'b0; // Default: pulse is only 1 clock cycle
+            key_pressed <= 1'b0; 
 
             if (negedge_ps2_clk) begin
                 //right shifting
@@ -59,10 +59,10 @@ module ps2_keyboard (CLOCK_50, reset, PS2_CLK, PS2_DAT, scancode, key_pressed);
                     end else if (ignore_next) begin
                         ignore_next <= 1'b0;
 								
-								if (shift_reg[9:2] == held_code) begin
+							if (shift_reg[9:2] == held_code) begin
 									is_held <= 1'b0;
 									held_code <= 8'd0;
-								end
+							end
                     end else begin
 								if (!is_held || (shift_reg[9:2] != held_code)) begin
 									scancode    <= shift_reg[9:2];
