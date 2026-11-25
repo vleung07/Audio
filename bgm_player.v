@@ -35,14 +35,14 @@ module bgm_player (
             7'd2:  {curr_pitch, curr_dur} = {C5,   5'd2};
             7'd3:  {curr_pitch, curr_dur} = {G4,   5'd2};
             7'd4:  {curr_pitch, curr_dur} = {C5,   5'd2};
-            7'd5:  {curr_pitch, curr_dur} = {E5,   5'd2};
+            7'd5:  {curr_pitch, curr_dur} = {D5,   5'd2};
             7'd6:  {curr_pitch, curr_dur} = {G4,   5'd2};
-            7'd7:  {curr_pitch, curr_dur} = {E5,   5'd2};
-            7'd8:  {curr_pitch, curr_dur} = {F5,   5'd2};
+            7'd7:  {curr_pitch, curr_dur} = {D5,   5'd2};
+            7'd8:  {curr_pitch, curr_dur} = {E5,   5'd2};
             7'd9:  {curr_pitch, curr_dur} = {G4,   5'd2};
-            7'd10: {curr_pitch, curr_dur} = {F5,   5'd2};
+            7'd10: {curr_pitch, curr_dur} = {E5,   5'd2};
             // Bar 2
-            7'd11: {curr_pitch, curr_dur} = {G5,   5'd4};
+            7'd11: {curr_pitch, curr_dur} = {F5,   5'd4};
             7'd12: {curr_pitch, curr_dur} = {E5,   5'd2};
             7'd13: {curr_pitch, curr_dur} = {D5,   5'd4};
             7'd14: {curr_pitch, curr_dur} = {C5,   5'd2};

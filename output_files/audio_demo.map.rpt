@@ -1,5 +1,5 @@
 Analysis & Synthesis report for audio_demo
-Tue Nov 24 19:17:15 2026
+Wed Nov 25 09:32:29 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 24 19:17:15 2026           ;
+; Analysis & Synthesis Status     ; Successful - Wed Nov 25 09:32:29 2026           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; audio_demo                                      ;
 ; Top-level Entity Name           ; audio_demo                                      ;
@@ -191,7 +191,7 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
+; Number detected on machine ; 28          ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -265,14 +265,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 420            ;
+; Estimate of Logic utilization (ALMs needed) ; 419            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 664            ;
+; Combinational ALUT usage for logic          ; 661            ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 169            ;
-;     -- 5 input functions                    ; 203            ;
-;     -- 4 input functions                    ; 60             ;
-;     -- <=3 input functions                  ; 231            ;
+;     -- 6 input functions                    ; 170            ;
+;     -- 5 input functions                    ; 206            ;
+;     -- 4 input functions                    ; 51             ;
+;     -- <=3 input functions                  ; 233            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 314            ;
 ;                                             ;                ;
@@ -287,8 +287,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 705            ;
-; Total fan-out                               ; 10756          ;
-; Average fan-out                             ; 7.32           ;
+; Total fan-out                               ; 10747          ;
+; Average fan-out                             ; 7.33           ;
 +---------------------------------------------+----------------+
 
 
@@ -297,7 +297,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                         ; Entity Name                    ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
-; |audio_demo                                                 ; 664 (237)           ; 314 (36)                  ; 3153920           ; 0          ; 19   ; 0            ; |audio_demo                                                                                                                                                                                                                                 ; audio_demo                     ; work         ;
+; |audio_demo                                                 ; 661 (237)           ; 314 (36)                  ; 3153920           ; 0          ; 19   ; 0            ; |audio_demo                                                                                                                                                                                                                                 ; audio_demo                     ; work         ;
 ;    |Audio_Controller:Audio_Controller|                      ; 161 (2)             ; 110 (2)                   ; 8192              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller                                                                                                                                                                                               ; Audio_Controller               ; work         ;
 ;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer| ; 158 (62)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                           ; Altera_UP_Audio_Out_Serializer ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|  ; 48 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |audio_demo|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO                                                                                           ; Altera_UP_SYNC_FIFO            ; work         ;
@@ -331,7 +331,7 @@ refer to the applicable agreement for further details.
 ;             |decode_11a:rden_decode|                        ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|Katsu:katsu_rom|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|decode_11a:rden_decode                                                                                                                           ; decode_11a                     ; work         ;
 ;    |avconf:avc|                                             ; 97 (53)             ; 75 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|avconf:avc                                                                                                                                                                                                                      ; avconf                         ; work         ;
 ;       |I2C_Controller:u0|                                   ; 44 (44)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|avconf:avc|I2C_Controller:u0                                                                                                                                                                                                    ; I2C_Controller                 ; work         ;
-;    |bgm_player:u_bgm|                                       ; 136 (136)           ; 52 (52)                   ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|bgm_player:u_bgm                                                                                                                                                                                                                ; bgm_player                     ; work         ;
+;    |bgm_player:u_bgm|                                       ; 133 (133)           ; 52 (52)                   ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|bgm_player:u_bgm                                                                                                                                                                                                                ; bgm_player                     ; work         ;
 ;    |ps2_keyboard:u_keyb|                                    ; 23 (23)             ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |audio_demo|ps2_keyboard:u_keyb                                                                                                                                                                                                             ; ps2_keyboard                   ; work         ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1448,7 +1448,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR              ; 53                          ;
 ;     plain             ; 42                          ;
 ; arriav_io_obuf        ; 4                           ;
-; arriav_lcell_comb     ; 664                         ;
+; arriav_lcell_comb     ; 661                         ;
 ;     arith             ; 218                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 137                         ;
@@ -1458,20 +1458,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 50                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 445                         ;
+;     normal            ; 442                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 48                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 46                          ;
-;         5 data inputs ; 153                         ;
-;         6 data inputs ; 169                         ;
+;         3 data inputs ; 29                          ;
+;         4 data inputs ; 37                          ;
+;         5 data inputs ; 156                         ;
+;         6 data inputs ; 170                         ;
 ; boundary_port         ; 19                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 448                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.40                        ;
-; Average LUT depth     ; 3.44                        ;
+; Max LUT depth         ; 8.40                        ;
+; Average LUT depth     ; 3.38                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1480,7 +1480,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -1490,7 +1490,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Tue Nov 24 19:15:00 2026
+    Info: Processing started: Wed Nov 25 09:31:09 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off audio_demo -c audio_demo
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
 Info (12021): Found 1 design units, including 1 entities, in source file avconf/i2c_controller.v
@@ -1523,8 +1523,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file audio_d
     Info (12023): Found entity 1: audio_demo File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 2
 Info (12127): Elaborating entity "audio_demo" for the top level hierarchy
 Info (12128): Elaborating entity "ps2_keyboard" for hierarchy "ps2_keyboard:u_keyb" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 128
-Info (12128): Elaborating entity "bgm_player" for hierarchy "bgm_player:u_bgm" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 206
-Info (12128): Elaborating entity "Don" for hierarchy "Don:don_rom" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 250
+Info (12128): Elaborating entity "bgm_player" for hierarchy "bgm_player:u_bgm" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 186
+Info (12128): Elaborating entity "Don" for hierarchy "Don:don_rom" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 207
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Don:don_rom|altsyncram:altsyncram_component" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Don.v Line: 81
 Info (12130): Elaborated megafunction instantiation "Don:don_rom|altsyncram:altsyncram_component" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Don.v Line: 81
 Info (12133): Instantiated megafunction "Don:don_rom|altsyncram:altsyncram_component" with the following parameter: File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Don.v Line: 81
@@ -1551,7 +1551,7 @@ Info (12128): Elaborating entity "decode_61a" for hierarchy "Don:don_rom|altsync
 Warning (12125): Using design file db/mux_ahb.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mux_ahb File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/db/mux_ahb.tdf Line: 22
 Info (12128): Elaborating entity "mux_ahb" for hierarchy "Don:don_rom|altsyncram:altsyncram_component|altsyncram_e1g1:auto_generated|mux_ahb:mux2" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/db/altsyncram_e1g1.tdf Line: 40
-Info (12128): Elaborating entity "Katsu" for hierarchy "Katsu:katsu_rom" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 256
+Info (12128): Elaborating entity "Katsu" for hierarchy "Katsu:katsu_rom" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 213
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Katsu:katsu_rom|altsyncram:altsyncram_component" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Katsu.v Line: 81
 Info (12130): Elaborated megafunction instantiation "Katsu:katsu_rom|altsyncram:altsyncram_component" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Katsu.v Line: 81
 Info (12133): Instantiated megafunction "Katsu:katsu_rom|altsyncram:altsyncram_component" with the following parameter: File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Katsu.v Line: 81
@@ -1578,7 +1578,7 @@ Info (12128): Elaborating entity "decode_11a" for hierarchy "Katsu:katsu_rom|alt
 Warning (12125): Using design file db/mux_5hb.tdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mux_5hb File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/db/mux_5hb.tdf Line: 22
 Info (12128): Elaborating entity "mux_5hb" for hierarchy "Katsu:katsu_rom|altsyncram:altsyncram_component|altsyncram_l8g1:auto_generated|mux_5hb:mux2" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/db/altsyncram_l8g1.tdf Line: 40
-Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 290
+Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 247
 Info (12128): Elaborating entity "Altera_UP_Clock_Edge" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Audio_Controller/Audio_Controller.v Line: 182
 Info (12128): Elaborating entity "Altera_UP_Audio_In_Deserializer" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Audio_Controller/Audio_Controller.v Line: 237
 Info (12128): Elaborating entity "Altera_UP_Audio_Bit_Counter" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/Audio_Controller/Altera_UP_Audio_In_Deserializer.v Line: 159
@@ -1680,7 +1680,7 @@ Info (12133): Instantiated megafunction "Audio_Controller:Audio_Controller|Audio
 Warning (12125): Using design file db/audio_clock_altpll.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: Audio_Clock_altpll File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/db/audio_clock_altpll.v Line: 29
 Info (12128): Elaborating entity "Audio_Clock_altpll" for hierarchy "Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component|Audio_Clock_altpll:auto_generated" File: c:/intelfpga/quartus_prime_standard_18.1/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 297
+Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 254
 Warning (10230): Verilog HDL assignment warning at avconf.v(68): truncated value with size 32 to match size of target (16) File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/avconf/avconf.v Line: 68
 Warning (10230): Verilog HDL assignment warning at avconf.v(119): truncated value with size 32 to match size of target (6) File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/avconf/avconf.v Line: 119
 Warning (10230): Verilog HDL assignment warning at avconf.v(137): truncated value with size 32 to match size of target (16) File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/avconf/avconf.v Line: 137
@@ -1770,17 +1770,17 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[1]" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 38
     Warning (15610): No output dependent on input pin "SW[2]" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 38
     Warning (15610): No output dependent on input pin "SW[3]" File: //VSRV1/B.Homes$/leungva7/Downloads/Audio/audio_demo.v Line: 38
-Info (21057): Implemented 1185 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1182 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 3 output pins
     Info (21060): Implemented 4 bidirectional pins
-    Info (21061): Implemented 717 logic cells
+    Info (21061): Implemented 714 logic cells
     Info (21064): Implemented 448 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 95 warnings
-    Info: Peak virtual memory: 4897 megabytes
-    Info: Processing ended: Tue Nov 24 19:17:15 2026
-    Info: Elapsed time: 00:02:15
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Peak virtual memory: 4883 megabytes
+    Info: Processing ended: Wed Nov 25 09:32:30 2026
+    Info: Elapsed time: 00:01:21
+    Info: Total CPU time (on all processors): 00:00:19
 
 

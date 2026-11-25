@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Nov 24 19:18:22 2026
+Fitter Status : Successful - Wed Nov 25 09:33:09 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : audio_demo
 Top-level Entity Name : audio_demo
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 430 / 32,070 ( 1 % )
-Total registers : 330
+Logic utilization (in ALMs) : 424 / 32,070 ( 1 % )
+Total registers : 326
 Total pins : 19 / 457 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 3,153,920 / 4,065,280 ( 78 % )
